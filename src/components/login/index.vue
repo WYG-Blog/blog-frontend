@@ -1,5 +1,12 @@
 <template>
-  <section class="header"></section>
+  <section class="header">
+    <p>
+      wygBlog
+    </p>
+    <p>
+      {{}}
+    </p>
+  </section>
   <section class="">This is login page</section>
   <section></section>
 </template>
@@ -11,10 +18,9 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="sass">
+<style lang="scss">
 body{
   .header{
-    background:red;
   }
 }
 </style>
