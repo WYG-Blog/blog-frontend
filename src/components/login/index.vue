@@ -1,15 +1,16 @@
 <template>
-  <section class="header">
-    <h1>
-      WYG-博客
-    </h1>
-    <p>
-      {{ title }} 
-      <span class="cusor">|</span>
-    </p>
+  <section class="login">
+    <section class="header">
+      <h1>
+        WYG-博客
+      </h1>
+      <p>
+        {{ title }} 
+        <span class="cusor">|</span>
+      </p>
+    </section>
+    <neum-form></neum-form>
   </section>
-  <neum-form></neum-form>
-  <section></section>
 </template>
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
@@ -34,6 +35,14 @@ export default defineComponent({
 </script>
 <style lang="scss">
 @import "@/assets/scss/variable.scss";
+
+.login{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .header {
   position: absolute;
   top: 20px;
@@ -50,12 +59,14 @@ export default defineComponent({
     .cusor{
       position: relative;
       left: -0.2em;
-      top: -0.05em;
-      
+      color: $black;
+      animation: cusorAnimate 1s infinite;
     }
   }
   @keyframes cusorAnimate {
-    
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
   }
 }
 </style>

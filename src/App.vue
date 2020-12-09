@@ -23,11 +23,6 @@ $gray: #a0a5a8;
   color: #2c3e50;
 }
 body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   background-color: $neu-1;

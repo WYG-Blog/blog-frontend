@@ -1,5 +1,5 @@
 <template>
-  <section class=""></section>
+  <section class="">Index 页面</section>
   <section></section>
 </template>
 <script lang="ts">
