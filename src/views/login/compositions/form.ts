@@ -1,16 +1,23 @@
 import { computed, Ref, ref } from 'vue'
+import router from '@/router';
 
 interface LoginForm {
   isSignIn: Ref;
-  switchSignCtr: Function;
   [propName: string]: any;
 }
 
 export default ():LoginForm => {
   const isSignIn = ref(true);
 
-  const switchSignCtr = () => { //切换登录/注册
+  const m_switchSignCtr = () => { // switch sign in/sign up
     isSignIn.value = !isSignIn.value;
+  }
+
+  const m_login = () => { //login method
+    console.log(router);
+    router.push({
+      name: 'blog'
+    })
   }
 
   const c_switchStatus = computed(() => {
@@ -51,7 +58,8 @@ export default ():LoginForm => {
     isSignIn,
     //reactive
     //method
-    switchSignCtr,
+    m_switchSignCtr,
+    m_login,
     //computed
     c_switchStatus,
     c_circleStatus,

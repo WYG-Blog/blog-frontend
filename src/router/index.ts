@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+// import Blog from '@/views/home/index.vue';
 
 export default createRouter({
   history: createWebHistory(),
@@ -9,15 +10,18 @@ export default createRouter({
     },
     {
       path: '/login',
-      component: () => import("@/components/login/index.vue")
+      name: 'login',
+      component: () => import("@/views/login/index.vue")
     },
     {
       path: '/blog',
-      component: () => import("@/components/home/index.vue")
+      name: 'blog',
+      component: () => import("@/views/home/index.vue")
     },
     {
       path: '/:w+',
-      component: () => import("@/components/404/index.vue")
+      name: '404',
+      component: () => import("@/views/404/index.vue")
     }
   ]
 })

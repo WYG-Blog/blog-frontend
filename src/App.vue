@@ -1,15 +1,23 @@
 <template>
+  <Header></Header>
   <router-view></router-view>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-export default defineComponent({});
+import Header from './components/header/index.vue';
+import { defineComponent } from "vue";
+export default defineComponent({
+  components: { 
+    Header
+  },
+  setup(){
+  }
+});
 </script>
 
 <style lang="scss">
-$neu-1: #ecf0f3;
-$gray: #a0a5a8;
+@import "@/assets/scss/variable.scss";
+
 * {
   margin: 0;
   padding: 0;

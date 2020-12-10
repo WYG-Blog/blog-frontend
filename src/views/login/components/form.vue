@@ -7,7 +7,7 @@
         <input class="form_input" type="text" placeholder="用户名" />
         <input class="form_input" type="password" placeholder="密码" />
         <a class="form_link">忘记密码？</a>
-        <button class="form_button button submit button_hov">登录</button>
+        <button class="form_button button submit button_hov" @click.prevent="m_login">登录</button>
       </form>
     </div>
     <div class="container b-container" :class="c_formContainerBStatus">
@@ -28,14 +28,14 @@
         <p class="switch_description">
           希望在博客中与我们互动，请先登录WYG，如果还没有信息请注册成为WYG用户 😁
         </p>
-        <button class="switch_button button button_hov" @click="switchSignCtr">注册</button>
+        <button class="switch_button button button_hov" @click="m_switchSignCtr">注册</button>
       </div>
       <div class="switch_container" :class="c_switchContainerBStatus">
         <h2 class="switch_title title">您好，新朋友🎈</h2>
         <p class="switch_description description">
           请输入您的个人信息，让我们一同起来我们得旅行吧！😜
         </p>
-        <button class="switch_button button button_hov" @click="switchSignCtr">登录</button>
+        <button class="switch_button button button_hov" @click="m_switchSignCtr">登录</button>
       </div>
     </div>
   </section> 
@@ -47,13 +47,13 @@ export default defineComponent({
   setup(){
     const { 
       isSignIn, 
-      switchSignCtr, 
+      m_switchSignCtr, m_login,
       c_switchStatus, c_circleStatus, c_switchContainerAStatus, c_switchContainerBStatus, c_formContainerAStatus, c_formContainerBStatus 
     } = useForm(); 
 
     return {
       isSignIn, //Ref
-      switchSignCtr, //method 
+      m_switchSignCtr, m_login, //method 
       c_switchStatus, c_circleStatus, c_switchContainerAStatus, c_switchContainerBStatus, c_formContainerAStatus, c_formContainerBStatus //computed
     }
   }
@@ -62,8 +62,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/scss/variable.scss";
 
-/* Generic */
-/**/
 .main {
   position: relative;
   width: 1000px;

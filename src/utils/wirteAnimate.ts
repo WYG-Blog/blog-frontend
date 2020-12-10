@@ -1,7 +1,10 @@
 import { Ref } from 'vue';
 
+let writeTimer: number | null = null;
+let writeArrTimer: number | null = null;
+
 /**
- * 
+ * write String特效
  * @param ref reactive 数据
  * @param str 字符串
  * @param time 间隔时间
@@ -15,15 +18,15 @@ export function write(
   strIndex: number = 0,
   cb?: Function
 ): void {
-  if(strIndex >= str.length) { typeof cb === 'function' ? cb() : null; return }
+  if (strIndex >= str.length) { typeof cb === 'function' ? cb() : null; return }
   ref.value += str[strIndex];
-  setTimeout(function(){
-    write(ref, str, time, ++ strIndex, cb);
+  writeTimer = setTimeout(function () {
+    write(ref, str, time, ++strIndex, cb);
   }, time);
 }
 
 /**
- * 
+ * write Arrary特效
  * @param ref reactive 数据
  * @param arr 字符串数组
  * @param time 间隔时间
@@ -37,11 +40,19 @@ export function writeArr(
   isLoop: boolean = false,
   arrIndex: number = 0,
 ): void {
-  if(arrIndex >= arr.length) { if(isLoop) arrIndex = 0; else return;} 
-  write(ref, arr[arrIndex], time, 0, function(){
-    setTimeout(function(){
+  if (arrIndex >= arr.length) { if (isLoop) arrIndex = 0; else return; }
+  write(ref, arr[arrIndex], time, 0, function () {
+    writeArrTimer = setTimeout(function () {
       ref.value = "";
-      writeArr(ref, arr, time, isLoop, ++ arrIndex); 
+      writeArr(ref, arr, time, isLoop, ++arrIndex);
     }, time * 5)
   });
+}
+
+/**
+ * 停止write
+ */
+export function stopWrite() {
+  if (writeTimer) clearTimeout(writeTimer);
+  if (writeArrTimer) clearTimeout(writeArrTimer);
 }
