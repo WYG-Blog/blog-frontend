@@ -4,28 +4,6 @@ let writeTimer: number | null = null;
 let writeArrTimer: number | null = null;
 
 /**
- * write String特效
- * @param ref reactive 数据
- * @param str 字符串
- * @param time 间隔时间
- * @param strIndex string 索引
- * @param cb 回调函数
- */
-export function write(
-  ref: Ref,
-  str: string,
-  time: number,
-  strIndex: number = 0,
-  cb?: Function
-): void {
-  if (strIndex >= str.length) { typeof cb === 'function' ? cb() : null; return }
-  ref.value += str[strIndex];
-  writeTimer = setTimeout(function () {
-    write(ref, str, time, ++strIndex, cb);
-  }, time);
-}
-
-/**
  * write Arrary特效
  * @param ref reactive 数据
  * @param arr 字符串数组
@@ -47,6 +25,28 @@ export function writeArr(
       writeArr(ref, arr, time, isLoop, ++arrIndex);
     }, time * 5)
   });
+}
+
+/**
+ * write String特效
+ * @param ref reactive 数据
+ * @param str 字符串
+ * @param time 间隔时间
+ * @param strIndex string 索引
+ * @param cb 回调函数
+ */
+export function write(
+  ref: Ref,
+  str: string,
+  time: number,
+  strIndex: number = 0,
+  cb?: Function
+): void {
+  if (strIndex >= str.length) { typeof cb === 'function' ? cb() : null; return }
+  ref.value += str[strIndex];
+  writeTimer = setTimeout(function () {
+    write(ref, str, time, ++strIndex, cb);
+  }, time);
 }
 
 /**

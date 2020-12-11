@@ -2,7 +2,7 @@ import { computed, ref, Ref, watch } from 'vue';
 import { writeArr, stopWrite } from '@/utils/wirteAnimate';
 import router from "@/router";
 
-interface Header{
+interface Header {
   title: Ref;
   isLoginPage: Ref;
   [prop: string]: any;
@@ -36,11 +36,11 @@ export default (): Header => {
 
   watch(router.currentRoute, () => {
     const currRoute = router.currentRoute;// judgement cuurent page is login page or not.
-    if(currRoute.value.name === 'login'){
+    if (currRoute.value.name === 'login') {
       isLoginPage.value = true;
       writeArr(title, typingMsg, timer, true);
     }
-    else{
+    else {
       isLoginPage.value = false;
       title.value = '';
       stopWrite();
