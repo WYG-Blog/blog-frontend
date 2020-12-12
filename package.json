@@ -9,6 +9,7 @@
     "commit": "yarn lint && ./node_modules/.bin/git-cz"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "element3": "^0.0.28",
     "vue": "^3.0.0",

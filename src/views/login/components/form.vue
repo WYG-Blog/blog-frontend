@@ -4,8 +4,8 @@
       <form class="form">
         <h2 class="form_title title">WYG-博客 登录</h2>
         <span>使用用户名进行登录</span>
-        <input class="form_input" type="text" placeholder="用户名" />
-        <input class="form_input" type="password" placeholder="密码" />
+        <input class="form_input" type="text" v-model="username" placeholder="用户名" />
+        <input class="form_input" type="password" v-model="password" placeholder="密码" />
         <a class="form_link">忘记密码？</a>
         <button class="form_button button submit button_hov" @click.prevent="m_login">登录</button>
       </form>
@@ -14,10 +14,10 @@
       <form action="" class="form">
         <h2 class="form_title title">WYG-博客 注册</h2>
         <span class="form_span">使用邮箱进行注册</span>
-        <input class="form_input" type="text" placeholder="邮箱" />
-        <input class="form_input" type="text" placeholder="用户名" />
-        <input class="form_input" type="password" placeholder="密码" />
-        <button class="form_button button submit button_hov">注册</button>
+        <input class="form_input" type="text" v-model="registry_email" placeholder="邮箱" />
+        <input class="form_input" type="text" v-model="registry_username" placeholder="用户名" />
+        <input class="form_input" type="password" v-model="registry_password" placeholder="密码" />
+        <button class="form_button button submit button_hov" @click.prevent="m_registe">注册</button>
       </form>
     </div>
     <div class="switch" :class="c_switchStatus">
@@ -33,7 +33,7 @@
       <div class="switch_container" :class="c_switchContainerBStatus">
         <h2 class="switch_title title">您好，新朋友🎈</h2>
         <p class="switch_description description">
-          请输入您的个人信息，让我们一同起来我们得旅行吧！😜
+          请输入您的个人信息，让我们一同开启我们的旅行吧！😜
         </p>
         <button class="switch_button button button_hov" @click="m_switchSignCtr">登录</button>
       </div>
@@ -43,18 +43,39 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import useForm from '../compositions/form';
+import useLogin from '../compositions/login';
+import useRegistry from '../compositions/registry';
 export default defineComponent({
   setup(){
     const { 
       isSignIn, 
-      m_switchSignCtr, m_login,
+      m_switchSignCtr,
       c_switchStatus, c_circleStatus, c_switchContainerAStatus, c_switchContainerBStatus, c_formContainerAStatus, c_formContainerBStatus 
     } = useForm(); 
 
+    const {
+      username, password,
+      m_login
+    } = useLogin();
+
+    const {
+      username:registry_username, password:registry_password, email:registry_email,
+      m_registe
+    } = useRegistry();
+
     return {
+      //form animation parameters
       isSignIn, //Ref
-      m_switchSignCtr, m_login, //method 
-      c_switchStatus, c_circleStatus, c_switchContainerAStatus, c_switchContainerBStatus, c_formContainerAStatus, c_formContainerBStatus //computed
+      m_switchSignCtr, //method 
+      c_switchStatus, c_circleStatus, c_switchContainerAStatus, c_switchContainerBStatus, c_formContainerAStatus, c_formContainerBStatus, //computed
+
+      //login method controllers
+      username, password, //Ref
+      m_login, //method
+
+      //registry method controllers
+      registry_username, registry_password, registry_email, //Ref
+      m_registe, //method
     }
   }
 });
