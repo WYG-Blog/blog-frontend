@@ -1,4 +1,6 @@
 import { ref, Ref } from 'vue';
+import { registe } from '@/axios/registry'
+import router from '@/router'
 
 interface Registry {
   email:Ref<string>;
@@ -13,7 +15,15 @@ export default ():Registry => {
   const password = ref('');
 
   const m_registe = () => {
-    console.log(email, username, password);
+    registe({
+      email: email.value,
+      username: username.value,
+      password: password.value
+    }).then(() => {
+      router.push({
+        name: 'blog'
+      })
+    })
   }
 
   return {
