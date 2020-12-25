@@ -6,7 +6,7 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/login'
+      redirect: '/blog'
     },
     {
       path: '/login',

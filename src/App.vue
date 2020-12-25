@@ -1,14 +1,18 @@
 <template>
-  <Header></Header>
+  <!-- <Header></Header> -->
+  <NavBar></NavBar>
   <router-view></router-view>
 </template>
 
 <script lang="ts">
-import Header from './components/header/index.vue';
+/** 暂时移除原有Header逻辑 */
+// import Header from './components/header/index.vue';
+import NavBar from './components/nav_bar/index.vue';
 import { defineComponent } from "vue";
 export default defineComponent({
   components: { 
-    Header
+    // Header,
+    NavBar
   },
   setup(){
   }
@@ -24,6 +28,9 @@ export default defineComponent({
   box-sizing: border-box;
   user-select: none;
 }
+html{
+  font-size: 26.66666667vw;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +40,12 @@ export default defineComponent({
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  background-color: $neu-1;
+  background-color: $bg;
   color: $gray;
+}
+@media screen and (min-width: 1024px){
+  html{
+    font-size: 9vw;
+  }
 }
 </style>

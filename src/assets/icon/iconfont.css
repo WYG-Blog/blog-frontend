@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1608864873391'); /* IE9 */
+  src: url('iconfont.eot?t=1608864873391#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPoAAsAAAAACIwAAAOZAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqEHINMATYCJAMUCwwABCAFhG0HVxtnB8gusG3YEyRgGyhA4TaAJTyNiwf6td+fK7ss9yFqkaH6dDxEEonqoUEiZCuBRGn0b/nnd6jTTgnLZXCfoADgPE3EDsiOG1ZUABiJt+/0xGum/gzAMzdAQAza3AX/L2DqP+6d/pb4fPYtl7kWFXVRHE2ggMbY2EVWICXKLbK7ArHI8wQUM3ZBR8KBw2CQmdMCwrUim8GQUckN2UEjqCvWZggvtJo4EtcBPAefD/8gOwOIqgTm3OOrOhtU/rr1UVZ3t7ud9hDs8QzgN5GwBWTCTaXpmjoKbVEr6u809oCiEcVftz4EPh7/KP8fjbcjSbH+8AiSKBNqMDO7wB5RZCfHdlACvwIoid/HUSK/Zc6LuaQCBd14A/BNCEt9K1kSBpIxKMil0wcjc/h029EpHDT6Brqndy507BNpe84xOhOiDYbcAk7EE0MwGc1Nj6KpyxAbfPpI0MTtJGie3nDI6AfS93xywWPDR46CCGPXV4l9Hh5pk3ZMjUbZzq/e4zhVqJob++qxYcQdU2HU84HxxCVQEpZJm9QG283EDsRB92pYrQfvyKPnHjwYDl7rCe+pdDDdJyvBexPv3r33LfNn+sOIpoiHqS9uirrMWvQUge4I283AAuhpGQ5W+jC1CWvdw69/uBs/X8/06rqGyLNEKNlQb8/scMLw/PwGbc7UDuGqsDOxNm/8mHfd+6hFmHsbLoWvOHFv5wTR57WYrQfPz88kzMzNb8irTdy5ZYrAr7wvcfDNLZuJdTkboRmgTS2qKxFUB9S7Jbt++jiLv0DOhZb+N3BX2/TDNSjE2aaBfqw/JwZm/2I2sCprXFNdZaXcYSmWys7LEUW1qeDH2gY8H0cyDM4kaAwnEHWYhqSxhMnsvWRSadnGUGvsQrHJtLllEKUWshHYMIAg6HMBoh5fkPS5j8mEZ3RsGfENQ60vNRSXIXLPlpUUXEOJmREbb2nhFavHLdlahsPsg0RucJppmhsQjxLqV7x8VnpmPmoibkLHWOBvlLMZk3iJely8gC4jTqeH91JPPbGydDtj3uKMDKnqRelWjwuwQxRhxhA2PIsWPIWVh5vkNWZw4f0HEbIGTma0oaJKexRB+Sm987KkywRgTCI3qOJaBvs1kmVjGIlOklAeLjwBJxJOTh5N5K0eVY+wYtLZewS8imVYtSSoKH1+iesZd0Fh3loFFVIjDdIiHXReKU6ym5FmFhJhdic7NXaPixhdVloJAAAAAA==') format('woff2'),
+  url('iconfont.woff?t=1608864873391') format('woff'),
+  url('iconfont.ttf?t=1608864873391') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1608864873391#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-file-text:before {
+  content: "\e7b9";
+}
+
+.icon-file-text-fill:before {
+  content: "\e858";
+}
+
+.icon-home:before {
+  content: "\e7c6";
+}
+
+.icon-home-fill:before {
+  content: "\e867";
+}
+
